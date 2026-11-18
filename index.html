@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday, Siriyoo! ♡</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #805e68;
+  background: #fff5f1;
+  overflow-x: hidden;
+}
+
+.screen {
+  display: none;
+  min-height: 100svh;
+  padding: 35px 20px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.screen.active {
+  display: flex;
+  animation: fadeIn 1s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+h1, h2 {
+  font-family: Georgia, serif;
+  font-weight: normal;
+  color: #bd7889;
+}
+
+h1 { font-size: clamp(2.7rem, 9vw, 4.8rem); }
+h2 { font-size: 2rem; }
+
+p { line-height: 1.8; }
+
+button {
+  border: 0;
+  border-radius: 35px;
+  padding: 15px 28px;
+  background: #d994a4;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  box-shadow: 0 5px 20px #d994a455;
+  margin-top: 20px;
+  transition: .25s;
+}
+
+button:hover { transform: translateY(-3px); }
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #b18a91;
+}
+
+/* FIRST PAGE */
+
+#opening {
+  background:
+    radial-gradient(circle at 20% 20%, #ffe3eb, transparent 35%),
+    radial-gradient(circle at 80% 80%, #ffe5d8, transparent 35%),
+    #fff8f2;
+}
+
+.intro {
+  z-index: 5;
+  position: relative;
+  max-width: 520px;
+}
+
+.butterfly {
+  position: absolute;
+  font-size: 27px;
+  animation: flutter 5s ease-in-out infinite alternate;
+  z-index: 2;
+}
+
+.b1 { top: 16%; left: 13%; }
+.b2 { top: 29%; right: 12%; animation-delay: 1s; }
+.b3 { bottom: 22%; left: 20%; animation-delay: 2s; }
+.b4 { bottom: 17%; right: 18%; animation-delay: 1.5s; }
+
+@keyframes flutter {
+  from { transform: translate(0,0) rotate(-12deg); }
+  to { transform: translate(22px,-25px) rotate(15deg); }
+}
+
+.balloon {
+  position: absolute;
+  bottom: -150px;
+  font-size: 48px;
+  animation: balloonUp 12s linear infinite;
+  opacity: .8;
+  z-index: 1;
+}
+
+.balloon:nth-of-type(5) { left: 5%; animation-delay: 0s; }
+.balloon:nth-of-type(6) { left: 25%; animation-delay: 4s; }
+.balloon:nth-of-type(7) { right: 20%; animation-delay: 2s; }
+.balloon:nth-of-type(8) { right: 5%; animation-delay: 6s; }
+
+@keyframes balloonUp {
+  0% { transform: translateY(0) rotate(-8deg); opacity: 0; }
+  10% { opacity: .85; }
+  50% { transform: translateY(-55vh) rotate(8deg); }
+  100% { transform: translateY(-120vh) rotate(-8deg); opacity: 0; }
+}
+
+.sparkle {
+  position: absolute;
+  color: #e6b5a9;
+  animation: twinkle 2.5s ease-in-out infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes twinkle {
+  from { opacity: .2; transform: scale(.7); }
+  to { opacity: 1; transform: scale(1.4); text-shadow: 0 0 15px #f1aebd; }
+}
+
+.glow-orb {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: #ffcfda;
+  filter: blur(55px);
+  opacity: .5;
+  animation: orb 5s ease-in-out infinite alternate;
+}
+
+.orb1 { top: 5%; left: -60px; }
+.orb2 { bottom: 5%; right: -60px; animation-delay: 2s; }
+
+@keyframes orb {
+  to { transform: scale(1.5); opacity: .8; }
+}
+
+/* LETTER PAGE */
+
+#letter {
+  background: linear-gradient(140deg, #fff6f0, #fce8ed);
+}
+
+.envelope {
+  font-size: 85px;
+  margin: 15px;
+  transition: .8s;
+}
+
+.envelope.open { transform: rotate(-10deg) scale(1.15); }
+
+.paper {
+  display: none;
+  width: min(90%, 440px);
+  padding: 28px;
+  background: #fffdf8;
+  border-radius: 8px;
+  box-shadow: 0 12px 35px #a879791c;
+  text-align: left;
+  animation: paperIn .8s ease;
+}
+
+.paper.show { display: block; }
+
+@keyframes paperIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.letter-text {
+  line-height: 2;
+  font-size: 15px;
+}
+
+/* NEW GRANDMA MESSAGE */
+
+.grandma-message {
+  font-size: 17px;
+  font-weight: bold;
+  color: #bd7889;
+  line-height: 1.9;
+  margin-top: 20px;
+}
+
+/* FINAL PAGE */
+
+#final {
+  background:
+    radial-gradient(circle at 50% 45%, #ffe0e8, transparent 45%),
+    #fff6f0;
+}
+
+.final-title {
+  font-size: clamp(2.5rem, 8vw, 4.3rem);
+  margin-bottom: 0;
+}
+
+.cake-wrap {
+  position: relative;
+  margin: 15px 0;
+  animation: cakeFloat 3s ease-in-out infinite;
+}
+
+.cake {
+  font-size: clamp(120px, 35vw, 190px);
+  line-height: 1.4;
+  filter: drop-shadow(0 0 18px #f3a7b9);
+  animation: cakeGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes cakeFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-13px); }
+}
+
+@keyframes cakeGlow {
+  from { filter: drop-shadow(0 0 12px #f4b3bd); }
+  to { filter: drop-shadow(0 0 35px #f5a4bb) drop-shadow(0 0 55px #f8d0aa); }
+}
+
+.cake-sparkle {
+  position: absolute;
+  font-size: 25px;
+  color: #e5b18d;
+  animation: twinkle 1.8s infinite alternate;
+}
+
+.cs1 { top: 5%; left: 2%; }
+.cs2 { top: 20%; right: 0; animation-delay: .6s; }
+.cs3 { bottom: 10%; left: 5%; animation-delay: 1s; }
+.cs4 { bottom: 5%; right: 5%; animation-delay: .3s; }
+
+.wishes {
+  max-width: 430px;
+  font-size: 15px;
+  margin: 5px auto;
+}
+
+/* CONFETTI */
+
+.confetti {
+  position: fixed;
+  top: -20px;
+  z-index: 20;
+  pointer-events: none;
+  animation: fall 5s linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(600deg);
+    opacity: 0;
+  }
+}
+
+@media(max-width: 430px) {
+  .paper { padding: 23px; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<section class="screen active" id="opening">
+
+  <div class="glow-orb orb1"></div>
+  <div class="glow-orb orb2"></div>
+
+  <span class="butterfly b1">🦋</span>
+  <span class="butterfly b2">🦋</span>
+  <span class="butterfly b3">🦋</span>
+  <span class="butterfly b4">🦋</span>
+
+  <div class="balloon">🎈</div>
+  <div class="balloon">🎈</div>
+  <div class="balloon">🎈</div>
+  <div class="balloon">🎈</div>
+
+  <span class="sparkle" style="top:12%;left:40%">✦</span>
+  <span class="sparkle" style="top:25%;right:30%">✧</span>
+  <span class="sparkle" style="bottom:30%;right:35%">✦</span>
+  <span class="sparkle" style="bottom:15%;left:42%">✧</span>
+  <span class="sparkle" style="top:45%;left:8%">✦</span>
+  <span class="sparkle" style="top:55%;right:8%">✧</span>
+
+  <div class="intro">
+    <div class="eyebrow">A little something for you</div>
+    <h1>Happy Birthday,<br>Siriyoo ♡</h1>
+    <p>A little surprise made just for your special day...</p>
+    <button onclick="showScreen('letter')">
+      Open your surprise ♡
+    </button>
+  </div>
+
+</section>
+
+
+<!-- PAGE 2 -->
+
+<section class="screen" id="letter">
+
+  <div class="eyebrow">A little birthday note</div>
+  <div class="envelope" id="envelope">💌</div>
+
+  <h2>A letter for you</h2>
+  <p>Something I wanted to say...</p>
+
+  <button id="openLetter" onclick="openTheLetter()">
+    Open the letter ♡
+  </button>
+
+  <div class="paper" id="paper">
+    <h2>Dear Siriyoo,</h2>
+    <div class="letter-text">
+      Happy Birthday!! ♡<br><br>
+      I hope this new year brings you lots of happiness,
+      exciting experiences, good surprises and everything
+      you've been wishing for. Have the loveliest birthday.
+      You deserve a wonderful one!!
+
+      <p class="grandma-message">
+        And now you're an old grandma!! 😂♡<br>
+        May you live until you're even, even older.
+      </p>
+    </div>
+  </div>
+
+  <button id="nextButton" style="display:none"
+    onclick="showFinal()">
+    Reveal your birthday surprise ✨
+  </button>
+
+</section>
+
+
+<!-- PAGE 3 -->
+
+<section class="screen" id="final">
+
+  <div class="eyebrow">Today is all about you</div>
+
+  <h1 class="final-title">Happy Birthday!!</h1>
+
+  <div class="cake-wrap">
+    <span class="cake-sparkle cs1">✦</span>
+    <span class="cake-sparkle cs2">✧</span>
+    <span class="cake-sparkle cs3">✦</span>
+    <span class="cake-sparkle cs4">✧</span>
+    <div class="cake">🎂</div>
+  </div>
+
+  <h2>Make a wish, Siriyoo! ♡</h2>
+
+  <p class="wishes">
+    May your days be filled with happiness, laughter,
+    lovely memories and wonderful surprises.
+    Wishing you the most amazing year ahead!
+  </p>
+
+  <p style="font-size:25px">♡ ✨ ♡</p>
+
+</section>
+
+
+<script>
+function showScreen(id) {
+  document.querySelectorAll('.screen').forEach(screen => {
+    screen.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
+}
+
+function openTheLetter() {
+  document.getElementById('envelope').classList.add('open');
+  document.getElementById('paper').classList.add('show');
+  document.getElementById('openLetter').style.display = 'none';
+  document.getElementById('nextButton').style.display = 'inline-block';
+}
+
+function showFinal() {
+  showScreen('final');
+  makeConfetti();
+}
+
+function makeConfetti() {
+  const symbols = ['♡', '✦', '✿', '✨', '✧'];
+
+  for (let i = 0; i < 45; i++) {
+    const piece = document.createElement('div');
+    piece.className = 'confetti';
+    piece.textContent = symbols[Math.floor(Math.random() * symbols.length)];
+    piece.style.left = Math.random() * 100 + 'vw';
+    piece.style.animationDelay = Math.random() * 2 + 's';
+    piece.style.fontSize = (12 + Math.random() * 17) + 'px';
+    piece.style.color = ['#d994a4', '#e8b9a9', '#c9a5b5', '#e6c9a0'][Math.floor(Math.random() * 4)];
+    document.body.appendChild(piece);
+    setTimeout(() => piece.remove(), 7000);
+  }
+}
+</script>
+
+</body>
+</html>
